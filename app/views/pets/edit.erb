@@ -9,6 +9,9 @@
   <br>
   <p>Select or Create an Owner</p>
   <h2>Existing Owners</h2>
-  
+  <% Owner.all.each do |owner| %>
+      <input type="radio" name="pet[owner_id]" id="<%= owner.id %>" value="<%= owner.id %>" <%='checked' if @pet.owner == owner %>><%= owner.name %></input><br>
+    <% end %>
+    <br>
 </form>
 
